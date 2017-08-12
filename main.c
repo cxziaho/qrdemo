@@ -69,7 +69,7 @@ int qrThread() {
 	if (!qr) {
 		snprintf(last_text, MAX_STRING, "QR Init Failed");
 	}
-	if (quirc_resize(qr, CAM_WIDTH, CAM_HEIGHT) < 0) {
+	if (quirc_resize(qr, CAM_WIDTH/2, CAM_HEIGHT/2) < 0) {
 		snprintf(last_text, MAX_STRING, "QR Resize Failed");
 	}
 	
@@ -86,11 +86,11 @@ int qrThread() {
 			for (y = 0; y < h; y++) {
 				int x;
 				for (x = 0; x < w; x++) {
-					colourRGBA = qr_data[(y*CAM_WIDTH)+x];
+					colourRGBA = qr_data[((y*2)*CAM_WIDTH)+x*2];
 					red = (colourRGBA & 0x000000FF);
 					green = (colourRGBA & 0x0000FF00) >> 8;
 					blue = (colourRGBA & 0x00FF0000) >> 16;
-					image[(y*CAM_WIDTH)+x] = (red + green + blue) / 3;
+					image[(y*(CAM_WIDTH/2))+x] = (red + green + blue) / 3;
 				}
 			}
 			quirc_end(qr);
