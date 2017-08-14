@@ -3,8 +3,12 @@ Decode QR codes from the camera, in realtime.
 Uses the [QUIRC](https://github.com/dlbeer/quirc) library, which I ported to Vita [here](https://github.com/cxziaho/quirc-vita), and uses [code](https://github.com/Rinnegatamante/lpp-vita/blob/master/source/luaCamera.cpp) from LuaPlayer Plus to init camera.
 This is a PoC.  Hopefully people can make some cool stuff using this library.  
   
-I might fork the VitaShell library and implement this, as my attempt at a standalone version of this wasn't working.  
+I implemented this into VitaShell in a [fork](https://github.com/cxziaho/VitaShell/releases/tag/1.63)!    
     
+Download the demo's VPK here!    
+![QR Code - VPK](https://raw.githubusercontent.com/cxziaho/qrdemo/master/img/image.png)  
+
+
 ## Building   
 Assuming you have the [VitaSDK](http://vitasdk.org) toolchain:  
 ```  
